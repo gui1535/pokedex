@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { PageRoutingModule } from './pages-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,12 +9,13 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
     PageRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

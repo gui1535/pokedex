@@ -11,15 +11,25 @@ export class PokeListComponent {
     private pokeApiService: PokeAPIService
   ) {
   }
+  private setAllPokemons: any;
   public getAllPokemons: any;
 
 
   ngOnInit(): void {
     this.pokeApiService.apiListAllPokemons().subscribe(
       res => {
+        this.setAllPokemons = res.results;
         this.getAllPokemons = res.results;
-        console.log(this.getAllPokemons)
       }
     );
+  }
+
+  getSearch(value: string) {
+    const filter = this.setAllPokemons.filter((res: any) => {
+      return !res.name.indexOf(value.toLowerCase());
+    });
+
+
+    this.getAllPokemons = filter;
   }
 }
