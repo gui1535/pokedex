@@ -8,13 +8,13 @@ import { map, tap } from 'rxjs/operators';
 })
 export class PokeAPIService {
 
-  private url: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100";
+  private url: string = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=50";
   constructor(
     private http: HttpClient
   ) { }
 
-  apiListAllPokemons(): Observable<any> {
-    return this.http.get<any>(this.url).pipe(
+  apiListAllPokemons(url: any = ''): Observable<any> {
+    return this.http.get<any>(url ? url : this.url).pipe(
       tap(res => res),
       tap(res => {
         res.results.map((resPokemons: any) => {
