@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --branco: #fff;
+    --font: 'Roboto', sans-serif;
+    --primary-color: #262835;
+    --secondary-color: #ff5473;
+}
+
+/**
+ * Função para converter para REM
+ */
+@function rem-calc($size) {
+    $value: $size /16;
+    @return #{value}rem;
+}
+
+html {
+    font-family: var(--font);
+    background-color: var(--primary-color);
+}
+
+main {
+    max-width: rem-calc(600);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
