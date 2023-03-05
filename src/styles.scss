@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --branco: #fff;
+    --cinza: #efefef;
     --font: 'Roboto', sans-serif;
     --primary-color: #262835;
     --secondary-color: #ff5473;
@@ -11,7 +12,7 @@
  */
 @function rem-calc($size) {
     $value: $size /16;
-    @return #{value}rem;
+    @return #{$value}rem;
 }
 
 html {
